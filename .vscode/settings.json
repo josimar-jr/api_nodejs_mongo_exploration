@@ -1,0 +1,8 @@
+{
+  "editor.renderWhitespace": "all",
+  "editor.autoIndent": "advanced",
+  "editor.detectIndentation": true,
+  "editor.trimAutoWhitespace": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2
+}
