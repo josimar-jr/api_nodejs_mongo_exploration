@@ -1,13 +1,11 @@
 const express = require('express')
 const app = express()
-const port = process.env.ENV || 3000
+const port = process.env.PORT || 3000
+const routes = require('./routes')
 
-const healthcheck = (req, res) => res.json({ status: 'ok' })
-
-app.get('/', healthcheck)
-app.get('/', healthcheck)
+app.use(routes)
 
 app.listen(port, () => {
   const serverStartDatetime = new Date()
-  console.info(`application running on port ${port} - ${serverStartDatetime.toString()}`)
+  console.info(`application running - ${serverStartDatetime.toString()}`)
 })
