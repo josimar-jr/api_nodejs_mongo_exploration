@@ -1,11 +1,13 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const app = express()
-const port = process.env.PORT || 3000
 const routes = require('./routes')
+
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
+app.use(bodyParser.json())
 
 app.use(routes)
 
-app.listen(port, () => {
-  const serverStartDatetime = new Date()
-  console.info(`application running - ${serverStartDatetime.toString()}`)
-})
+module.exports = app
