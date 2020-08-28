@@ -2,11 +2,13 @@
   "name": "api_nodejs_mongo_exploration",
   "version": "0.0.1",
   "description": "challenge for searching data in mongodb collections",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "linter": "eslint **/*.js"
+    "start": "node src/index.js",
+    "test": "jest",
+    "coverage": "jest --collectCoverage",
+    "linter": "eslint **/*.js",
+    "linter:fix": "eslint --fix **/*.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "jest": "^26.4.2"
+    "jest": "^26.4.2",
+    "supertest": "^4.0.2"
   }
 }
