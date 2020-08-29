@@ -15,9 +15,10 @@ jobs:
       script: npm test
     - script: npm run coverage
       name: "getting code coverage"
-    - script: bash <(curl -s https://codecov.io/bash)
+    - stage: coverage
       name: "uploads coverage"
+      script: bash <(curl -s https://codecov.io/bash)
     - stage: deploy
       name: "deploying app to production"
       if: branch = master
-      script: "should run deploy thing && 0"
+      script: echo "should run deploy thing" && 0
