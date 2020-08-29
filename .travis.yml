@@ -1,17 +1,23 @@
 language: node_js
+os: linux
+dist: xenial
 node_js:
   - 14
 jobs:
   include:
     - stage: build
-      name: "running app build"
+      name: "checking style"
       script: npm run linter
     - script: npm ci
+      name: "running app build"
     - stage: test
       name: "running app tests"
       script: npm test
     - script: npm run coverage
+      name: "getting code coverage"
+    - script: bash <(curl -s https://codecov.io/bash)
+      name: "uploads coverage"
     - stage: deploy
       name: "deploying app to production"
       if: branch = master
-      script: "should run deploy thing"
+      script: "should run deploy thing && 0"
