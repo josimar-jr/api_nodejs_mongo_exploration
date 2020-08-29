@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - 14
+jobs:
+  include:
+    - stage: build
+      name: "running app build"
+      script: npm run linter
+      script: npm ci
+    - stage: test
+      name: "running app tests"
+      script: npm test
+      script: npm run coverage
+    - stage: deploy
+      name: "deploying app to production"
+      if: branch = master
+      script: "should run deploy thing"
