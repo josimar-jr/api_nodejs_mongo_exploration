@@ -17,9 +17,30 @@ describe('routes tests', () => {
       .expect(OK, done)
   })
 
-  it('should get a not found', async (done) => {
+  it('should get a not found for a GET', async (done) => {
     request(server)
       .get('/blergh')
+      .expect('Content-Type', /json/)
+      .expect(NOT_FOUND, done)
+  })
+
+  it('should get a not found for a PUT', async (done) => {
+    request(server)
+      .put('/blergh')
+      .expect('Content-Type', /json/)
+      .expect(NOT_FOUND, done)
+  })
+
+  it('should get a not found for a POST', async (done) => {
+    request(server)
+      .post('/blergh')
+      .expect('Content-Type', /json/)
+      .expect(NOT_FOUND, done)
+  })
+
+  it('should get a not found for a DELETE', async (done) => {
+    request(server)
+      .delete('/blergh')
       .expect('Content-Type', /json/)
       .expect(NOT_FOUND, done)
   })
