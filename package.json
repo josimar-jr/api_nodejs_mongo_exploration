@@ -7,8 +7,8 @@
     "start": "node src/index.js",
     "test": "jest",
     "coverage": "jest --collectCoverage",
-    "linter": "eslint **/*.js",
-    "linter:fix": "eslint --fix **/*.js"
+    "linter": "eslint src/**/*.js",
+    "linter:fix": "eslint --fix src/**/*.js"
   },
   "repository": {
     "type": "git",
