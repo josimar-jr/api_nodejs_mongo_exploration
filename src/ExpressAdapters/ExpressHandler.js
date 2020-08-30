@@ -20,6 +20,13 @@ module.exports.ExplorerHandler = (req, res) => {
     return
   }
 
-  const result = ExplorerController(req.params.collection, req.body)
-  res.status(OK).json(toResponse(result))
+  ExplorerController(req.params.collection, req.body)
+    .then(result => {
+      res.status(OK).json(toResponse(result))
+    })
+    .catch(error => {
+      console.error(`[express-handler] error while running request, details: ${error}`)
+      const invalidResult = new Result({ error: errorList.no_filters })
+      res.status(BAD_REQUEST).json(toResponse(invalidResult))
+    })
 }
