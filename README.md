@@ -62,3 +62,16 @@ The application can be ensure to be running by:
 - performing request in the endepoint `POST /fetch/Product` with suitable body
 
 There is also in the [resource folder](./resources/postman.zip) a postman collection to be imported and perform the resquest against the dev environment.
+
+It is also possible to run the application in dev mode with hot reload (any file change retrigger application startup), this is very useful when testing stuff. This mode is available through the command `npm run dev`.
+
+The others availables commands are:
+- `npm run linter` -> runs eslint to evaluate code practices and style, some of the issues pointed by eslint are solved by running `npm run linter:fix`
+- `npm test` -> runs all tests in the application
+- `npm run coverage` -> gets coverage from the tests that ran before
+
+CI is done using Travis and can be checked on https://travis-ci.org/github/josimar-jr/api_nodejs_mongo_exploration.
+
+Code Coverage is done using Travis and CodeCov, check it on https://codecov.io/gh/josimar-jr/api_nodejs_mongo_exploration.
+
+CD is done using Heroku and its integration with Github monitoring changes applied to `master` branch.
