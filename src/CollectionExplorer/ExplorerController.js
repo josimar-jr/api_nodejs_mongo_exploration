@@ -30,7 +30,7 @@ module.exports.ExplorerController = (collection, filterParams) => {
         dataPromise = module.exports.SeekOnExampleCollection(filterParams)
         break
       default:
-        return resolve(new Result({ error: errorList.no_collection }))
+        return resolve(new Result({ error: errorList.collection_not_mapped }))
     }
 
     dataPromise
