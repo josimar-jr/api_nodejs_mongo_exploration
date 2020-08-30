@@ -11,6 +11,12 @@
       "program": "${workspaceFolder}/src/index.js"
     },
     {
+      "type": "node",
+      "request": "launch",
+      "name": "debug current file",
+      "program": "${file}"
+    },
+    {
       "name": "Debug Jest Tests",
       "type": "node",
       "request": "launch",
