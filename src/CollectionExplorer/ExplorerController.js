@@ -72,7 +72,7 @@ module.exports.SeekOnRecordCollection = (filterParams) => {
 
 module.exports.SeekOnCustomCollection = (filterParams) => {
   return new Promise(resolve => {
-    CustomDocumentAdapter.FilterByDate(filterParams)
+    CustomDocumentAdapter.FilterByDateAndTotalCount(filterParams)
       .then(filteredCustomDocuments => {
         resolve(filteredCustomDocuments)
       })
@@ -80,9 +80,9 @@ module.exports.SeekOnCustomCollection = (filterParams) => {
   })
 }
 
-module.exports.SeekOnExamplesCollection = (filterParams) => {
+module.exports.SeekOnExampleCollection = (filterParams) => {
   return new Promise(resolve => {
-    ExampleAdapter.FilterByDate(filterParams)
+    ExampleAdapter.FilterByDateAndTotalCount(filterParams)
       .then(filteredExamples => {
         resolve(filteredExamples)
       })

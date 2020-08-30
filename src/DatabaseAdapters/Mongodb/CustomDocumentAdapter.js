@@ -5,7 +5,7 @@ const errorList = require('../../Utils/ErrorsList')
 const baseModel = mongoose.model('CustomDocument', baseSchema)
 module.exports = baseModel
 
-module.exports.FilterByDate = (rawFilter) => {
+module.exports.FilterByDateAndTotalCount = (rawFilter) => {
   return new Promise(resolve => {
     // mounts filter to run in mongodb aggregate pipeline
     const startDate = rawFilter.startDate // moment(rawFilter.startDate)
