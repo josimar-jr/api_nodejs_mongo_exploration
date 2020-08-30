@@ -1,0 +1,25 @@
+version: "3.6"
+
+services:
+  mongo:
+    image: mongo:latest
+    environment:
+      MONGO_DATA_DIR: /data/db
+      MONGO_LOG_DIR: /dev/null
+      TZ: America/Sao_Paulo
+    ports:
+      - 27017:27017
+    networks:
+      - backend
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+        - 8081:8081
+    depends_on:
+      - mongo
+    networks:
+      - backend
+networks:
+  backend:
+    driver: bridge
