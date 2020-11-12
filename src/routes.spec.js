@@ -14,7 +14,12 @@ describe('routes tests', () => {
     request(server)
       .get('/healthcheck')
       .expect('Content-Type', /json/)
-      .expect(OK, done)
+      .expect(OK)
+      .end(function(err, res) {
+        if (err) return done(err)
+        expect(res.body.status).toBe('ok')
+        done()
+      })
   })
 
   it('should get a not found for a GET', async (done) => {
