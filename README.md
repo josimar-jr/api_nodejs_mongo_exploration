@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/josimar-jr/api_nodejs_mongo_exploration.svg?branch=master)](https://travis-ci.org/josimar-jr/api_nodejs_mongo_exploration) [![codecov](https://codecov.io/gh/josimar-jr/api_nodejs_mongo_exploration/branch/master/graph/badge.svg)](https://codecov.io/gh/josimar-jr/api_nodejs_mongo_exploration)
+[![Pipeline](https://github.com/josimar-jr/api_nodejs_mongo_exploration/actions/workflows/node.js.yml/badge.svg)](https://github.com/josimar-jr/api_nodejs_mongo_exploration/) [![codecov](https://codecov.io/gh/josimar-jr/api_nodejs_mongo_exploration/branch/master/graph/badge.svg)](https://codecov.io/gh/josimar-jr/api_nodejs_mongo_exploration)
 
 
 # api nodejs + mongo collections exploration
