@@ -19,11 +19,27 @@ jobs:
         node-version: [12.x, 14.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
+    services:
+      mongo:
+        image: mongo
+
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Applying npm install
+      uses: bahmutov/npm-install@v1
+    - run: npm ci
+
+    - name: Checks style through linting
+      run: npm run linter
+
+    - name: Runs test ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm linter
+    - run: npm run coverage
+      env:
+        PORT: 3020
+        NODE_ENV: test
+        MONGODB_URI: mongodb://mongo:27017/getir-test
