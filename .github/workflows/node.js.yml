@@ -30,7 +30,7 @@ jobs:
     - name: Applying npm install
       uses: actions/setup-node@v1
       uses: bahmutov/npm-install@v1
-      run: npm ci
+    - run: npm ci
 
     - name: Checks style through linting
       run: npm run linter
@@ -39,7 +39,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-      run: npm run coverage
+    - run: npm run coverage
       env:
         PORT: 3020
         NODE_ENV: test
